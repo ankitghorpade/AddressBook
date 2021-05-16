@@ -9,14 +9,14 @@ public class Contact {
     private String city;
     private String state;
     private String zip;
-    private long phno;
+    private long phoneNo;
     private String email;
 
     @Override
     public String toString()
     {
         return "Contact [firstName: "+firstName+" , "+"lastName: "+lastName+" , "+"address: "+address+" , "+"city: "+city+" , "+
-                "state: "+state+" , "+"zip: "+zip+" , "+"phoneNo: "+phno+" , "+"email: "+email+ "]" ;
+                "state: "+state+" , "+"zip: "+zip+" , "+"phoneNo: "+phoneNo+" , "+"email: "+email+ "]" ;
     }
 
     //called contact class for creating contacts with given details
@@ -29,7 +29,7 @@ public class Contact {
         this.city = city;
         this.state = state;
         this.zip = zip;
-        this.phno = phno;
+        this.phoneNo = phoneNo;
         this.email = email;
     }
 
@@ -72,10 +72,10 @@ public class Contact {
         this.zip = zip;
     }
     public long getPhoneNo() {
-        return phno;
+        return phoneNo;
     }
     public void setPhoneNo(long phno) {
-        this.phno = phno;
+        this.phoneNo = phoneNo;
     }
     public String getEmail() {
         return email;
