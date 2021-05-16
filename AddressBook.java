@@ -25,7 +25,7 @@ public class AddressBook {
         System.out.println("Enter your zipCode : ");
         String zip = sc.nextLine();
         System.out.println("Enter your phoneNo : ");
-        String phoneNo = sc.nextLine();
+        long phoneNo = sc.nextLong();
         System.out.println("Enter your emailId : ");
         String email = sc.nextLine();
         Contact obj = new Contact(firstName, lastName, address, city, state, zip, phoneNo, email);
@@ -34,10 +34,20 @@ public class AddressBook {
 
 
     public static void main(String[] args) {
+
+        AddressBook addressBook = new AddressBook();
         //Displaying the welcome message
-        System.out.println("Welcome to Addess Book");
-        //Creating contact
-        addContact();
+        System.out.println("Welcome to address book");
+        //Adding new contact
+        System.out.println("Enter details of new contact");
+
+        //Creating contact and adding new contact details to the list
+        int count = 1;
+        while (count == 1) {
+            addContact();
+            count--;
+        }
+
         System.out.println(list); //printing list
     }
 }

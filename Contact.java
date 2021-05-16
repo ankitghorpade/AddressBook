@@ -1,25 +1,26 @@
 package com;
 
 public class Contact {
-	 //Initialize all the parameters
+
+    //Initialize all the parameters
     private String firstName;
     private String lastName;
     private String address;
     private String city;
     private String state;
     private String zip;
-    private String phoneNo;
+    private long phno;
     private String email;
 
     @Override
     public String toString()
     {
         return "Contact [firstName: "+firstName+" , "+"lastName: "+lastName+" , "+"address: "+address+" , "+"city: "+city+" , "+
-                "state: "+state+" , "+"zip: "+zip+" , "+"phoneNo: "+phoneNo+" , "+"email: "+email+ "]" ;
+                "state: "+state+" , "+"zip: "+zip+" , "+"phoneNo: "+phno+" , "+"email: "+email+ "]" ;
     }
 
     //called contact class for creating contacts with given details
-    public Contact(String firstName, String lastName, String address, String city, String state, String zip, String phoneNo, String email)
+    public Contact(String firstName, String lastName, String address, String city, String state, String zip, long phoneNo, String email)
     {
         super();
         this.firstName = firstName;
@@ -28,11 +29,11 @@ public class Contact {
         this.city = city;
         this.state = state;
         this.zip = zip;
-        this.phoneNo = phoneNo;
+        this.phno = phno;
         this.email = email;
     }
 
-    /*getting and setting the firstName, lastName, address , city , state, zip , Phone Number, email*/
+    /*getting and setting the firstName, lastName, address , city , state, zip , phone number, email*/
 
     public String getFirstName() {
         return firstName;
@@ -70,11 +71,11 @@ public class Contact {
     public void setZip(String zip) {
         this.zip = zip;
     }
-    public String getPhoneNo() {
-        return phoneNo;
+    public long getPhoneNo() {
+        return phno;
     }
-    public void setPhoneNo(String phoneNo) {
-        this.phoneNo = phoneNo;
+    public void setPhoneNo(long phno) {
+        this.phno = phno;
     }
     public String getEmail() {
         return email;
@@ -83,4 +84,3 @@ public class Contact {
         this.email = email;
     }
 }
-
