@@ -1,3 +1,4 @@
+  
 package com;
 
 import java.util.LinkedList;
@@ -85,6 +86,16 @@ public class AddressBook {
         }
     }
 
+  //Called method searchByCity for searching contact details by city name
+    public static void searchByCity() {
+        System.out.println("Enter City Name : ");
+        String city = sc.nextLine();
+        for (Contact list : list) {
+            if(((Contact) list).getCity().equals(city))
+                System.out.println(list);
+        }
+    }
+
     public static void main(String[] args) {
 
         AddressBook addressBook = new AddressBook();
@@ -92,6 +103,7 @@ public class AddressBook {
         System.out.println("WELCOME TO ADDRESS BOOK PROBLEM");
         //adding multiple persons
         addPersons();
-        System.out.println(list); //printing list
+        //Searching by city
+        searchByCity();
     }
 }
