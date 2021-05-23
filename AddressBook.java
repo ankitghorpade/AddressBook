@@ -1,4 +1,4 @@
-   
+  
 package com;
 
 import java.util.LinkedList;
@@ -105,6 +105,24 @@ public class AddressBook {
                 System.out.println(list);
         }
     }
+    /*Count number of contact persons based on city*/
+    public void countBasedOnCity()
+    {
+        int count = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter city name : ");
+        String city = sc.nextLine();
+        sc.close();
+        for (Contact list : list)
+        {
+            if (list.getCity().equals(city)) {
+                count++;
+                System.out.println(list);
+
+            }
+        }
+        System.out.println("TotalNo : " + count);
+    }
     public static void main(String[] args) {
 
         AddressBook addressBook = new AddressBook();
@@ -112,7 +130,8 @@ public class AddressBook {
         System.out.println("WELCOME TO ADDRESS BOOK PROBLEM");
         //adding multiple persons
         addPersons();
-        //Viewing details by city name
-        addressBook.viewByCity();
+        //Result will show count by city name
+        addressBook.countBasedOnCity();
+
     }
 }
