@@ -12,8 +12,22 @@ public class AddressBook {
     //Created method for adding contact
     public static void addContact()
     {
+    	
+    	
+    	 System.out.println("Enter your firstName : ");
+         String firstName = sc.nextLine();
+         for (int i = 0; i < list.size(); i++)
+         {
+             if (list.get(i).getFirstName().equalsIgnoreCase(firstName))
+             {
+                 System.out.println("Name already exists. Try another name");
+                 addPersons();
+                 break;
+             }
+         }
+         
         System.out.println("Enter your firstName : ");
-        String firstName = sc.nextLine();
+        String FirstName = sc.nextLine();
         System.out.println("Enter your lastName : ");
         String lastName = sc.nextLine();
         System.out.println("Enter your address : ");
@@ -28,7 +42,7 @@ public class AddressBook {
         long phoneNo = sc.nextLong();
         System.out.println("Enter your emailId : ");
         String email = sc.nextLine();
-        Contact obj = new Contact(firstName, lastName, address, city, state, zip, phoneNo, email);
+        Contact obj = new Contact(FirstName, lastName, address, city, state, zip, phoneNo, email);
         list.add(obj);
     }
 
