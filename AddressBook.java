@@ -8,8 +8,6 @@ public class AddressBook {
 
     static Scanner sc = new Scanner(System.in);
     static List<Contact> list = new LinkedList<Contact>();
-	private static AddressBook addressBook;
-	private static AddressBook addressBook2;
 
     //Created method for adding contact
     public static void addContact()
@@ -34,50 +32,52 @@ public class AddressBook {
         list.add(obj);
     }
 
-
-    public static void editContact()
-    {
+    //Created method for editing contact details
+    public static void editContact() {
         //Scanner sc = new Scanner(System.in);
         System.out.println("Enter first name: ");
         String firstName = sc.nextLine();
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getFirstName().equalsIgnoreCase(firstName))
-            {
+            if (list.get(i).getFirstName().equalsIgnoreCase(firstName)) {
                 list.remove(i);
                 addContact();
-            }
-            else {
+            } else {
                 System.out.println("No data found in Address Book");
             }
         }
     }
 
-
-  //Creating deleteContact() for deleting contact details using first name
-    public static void deleteContact() {
-        System.out.println("Enter first name : ");
-        String firstName = sc.nextLine();
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getFirstName().equalsIgnoreCase(firstName)) {
-                list.remove(i);
-            } else {
-                System.out.println("No data found");
+        //Creating deleteContact() for deleting contact details using first name
+        public static void deleteContact() {
+            System.out.println("Enter first name : ");
+            String firstName = sc.nextLine();
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i).getFirstName().equalsIgnoreCase(firstName)) {
+                    list.remove(i);
+                } else {
+                    System.out.println("No data found");
+                }
             }
+    }
+
+    //Adding Multiple persons i.e contacts in address book
+    public static void addPersons() {
+        System.out.println("Enter number of persons added to be in address book : ");
+        int noOfPersons = sc.nextInt();
+        int count  = 1;
+        while (count <= noOfPersons) {
+            addContact();
+            count++;
         }
-}
+    }
 
-public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    addressBook2 = new AddressBook();
-    //Displaying the welcome message
-    System.out.println("WELCOME TO ADDRESS BOOK PROBLEM");
-    //Adding new contact
-    System.out.println("Enter details of new contact");
-    addContact();
-    //Editing Contact
-    editContact();
-    //deleting contact
-    deleteContact();
-    System.out.println(list); //printing list
-}
+        AddressBook addressBook = new AddressBook();
+        //Displaying the welcome message
+        System.out.println("WELCOME TO ADDRESS BOOK PROBLEM");
+        //adding multiple persons
+        addPersons();
+        System.out.println(list); //printing list
+    }
 }
